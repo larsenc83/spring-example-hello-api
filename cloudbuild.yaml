@@ -3,11 +3,11 @@ steps:
   entrypoint: mvn
   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-east1-docker.pkg.dev/${PROJECT_ID}/example-spring-image-repo/hello-api:latest', '.']
+  args: ['build', '-t', 'us-east1-docker.pkg.dev/${PROJECT_ID}/ar-the-playground/hello-api:${SHORT_SHA}', '.']
 
 
 images:
-- 'us-east1-docker.pkg.dev/${PROJECT_ID}/example-spring-image-repo/hello-api:latest'
+- 'us-east1-docker.pkg.dev/${PROJECT_ID}/ar-the-playground/hello-api:${SHORT_SHA}'
 
 
 options:
